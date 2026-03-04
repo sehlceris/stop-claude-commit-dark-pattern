@@ -40,6 +40,36 @@ Adds this to your Claude Code settings:
 
 Existing settings in each file are preserved; only the `attribution` key is added or overwritten.
 
+## Manually disabling Claude Code attribution (without this tool)
+
+If you'd rather not install anything, just add the following JSON to one or more of your Claude Code settings files:
+
+```json
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  }
+}
+```
+
+This tells Claude Code not to include any attribution text in:
+
+- **Git commits** (no "Co-Authored-By: Claude..." line)
+- **Pull request descriptions** (no AI attribution footer)
+
+### Settings file locations
+
+Claude Code supports multiple settings files. Add the JSON above to any of these:
+
+| File                          | Scope                  | Notes                                                 |
+| ----------------------------- | ---------------------- | ----------------------------------------------------- |
+| `~/.claude/settings.json`     | Global (all projects)  | `%USERPROFILE%\.claude\settings.json` on Windows      |
+| `.claude/settings.json`       | Project-wide           | Checked into version control, shared with your team   |
+| `.claude/settings.local.json` | Local project override | Typically gitignored, applies only to your local copy |
+
+If the file already exists, merge the `"attribution"` key into the existing JSON. If it doesn't exist, create it with the JSON above.
+
 ## Platform support
 
 Works on macOS, Linux, and Windows. On Windows the global settings path resolves to `%USERPROFILE%\.claude\settings.json`.
