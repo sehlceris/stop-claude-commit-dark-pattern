@@ -46,6 +46,9 @@ Works on macOS, Linux, and Windows. On Windows the global settings path resolves
 
 ## Publishing to npm
 
+- Create an account at https://www.npmjs.com/
+- Create an organization (NOTE: you will be asked to choose a different username, since usernames cannot be named the same as organizations)
+
 ```bash
 # Log in to npm (one-time)
 npm login
